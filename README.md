@@ -1,6 +1,4 @@
-# README
-
-Test task Intern Dev
+# Test task Intern Dev
 
 **Задача**: Разработать backend для сервиса «Онлайн рекомендации»
 
