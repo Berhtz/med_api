@@ -1,5 +1,13 @@
 # Test task Intern Dev
 
+Ruby 3.2.2
+How to run the application:
+1. docker-compose up --build -d
+2. docker-compose exec web rake db:migrate
+
+To stop the app:
+Run "docker-compose kill" or "docker-compose down" if you want to remove containers as well
+
 **Задача**: Разработать backend для сервиса «Онлайн рекомендации»
 
 **Описание**:
