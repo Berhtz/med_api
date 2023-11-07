@@ -2,7 +2,7 @@
 
 Ruby 3.2.2
 How to run the application:
-1. docker-compose up --build -d
+1. docker-compose up --build
 2. docker-compose exec web rake db:migrate
 
 To stop the app:
