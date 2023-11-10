@@ -1,24 +1,24 @@
 # Test task Intern Dev
 
-Ruby 3.2.2
-Gems added: pg, dry-validation
-Tests using Minitest are added for dry-validation only
-How to run the application:
-1. docker-compose up --build
-2. docker-compose exec web rake db:migrate
+Ruby 3.2.2  
+Gems added: pg, dry-validation  
+Tests using Minitest are added for dry-validation only  
+How to run the application:  
+1. docker-compose up --build  
+2. docker-compose exec web rake db:migrate  
 
-To test model validations:
-1. docker-compose exec web rails db:test:prepare
-2. docker-compose exec web rails test
+To test model validations:  
+1. docker-compose exec web rails db:test:prepare  
+2. docker-compose exec web rails test  
 
-There is no controller test functions, to manually test api requests you will need Patient model instance, create it in rails console:
-1. docker-compose exec web rails c
-2. p = Patient.create(full_name:"John Doe")
-It will create a patient with ID 1 and the name John Doe; other parameters will be set to nil
+There is no controller test functions, to manually test api requests you will need Patient model instance, create it in rails console:  
+1. docker-compose exec web rails c  
+2. p = Patient.create(full_name:"John Doe")  
+It will create a patient with ID 1 and the name John Doe; other parameters will be set to nil  
+ 
+Routes manual testing in order:  
 
-Routes manual testing in order:
-
-1. post '/consultation_requests' payload example:
+1. post '/consultation_requests' payload example:  
 {"consultation_request": {
     "patient_id": 1,
     "request_text": "example text"
