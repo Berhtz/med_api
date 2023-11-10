@@ -1,12 +1,41 @@
 # Test task Intern Dev
 
 Ruby 3.2.2
+Gems added: pg, dry-validation
+Tests using Minitest are added for dry-validation only
 How to run the application:
 1. docker-compose up --build
 2. docker-compose exec web rake db:migrate
 
-To stop the app:
-Run "docker-compose kill" or "docker-compose down" if you want to remove containers as well
+To test model validations:
+1. docker-compose exec web rails db:test:prepare
+2. docker-compose exec web rails test
+
+There is no controller test functions, to manually test api requests you will need Patient model instance, create it in rails console:
+1. docker-compose exec web rails c
+2. p = Patient.create(full_name:"John Doe")
+It will create a patient with ID 1 and the name John Doe; other parameters will be set to nil
+
+Routes manual testing in order:
+
+1. post '/consultation_requests' payload example:
+{"consultation_request": {
+    "patient_id": 1,
+    "request_text": "example text"
+    }
+}
+
+2. post '/consultation_requests/:request_id/recommendations' set the request_id to 1, payload example:
+{"recommendation": {
+    "recommendation_text": "example text"
+    }
+}
+
+3. get '/patients/:patient_id/recommendations', set the request_id to 1, no payload for this one
+
+4. get '/make_api_request', this is route to get data from OpenFDA
+
+Task:
 
 **Задача**: Разработать backend для сервиса «Онлайн рекомендации»
 

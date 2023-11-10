@@ -10,12 +10,11 @@ COPY Gemfile Gemfile.lock ./
 # Install dependencies
 RUN bundle install
 
-# Copy the rest of the application code
+# Copy the rtion code
 COPY . .
 
 # Expose port 3000 for the Rails server
 EXPOSE 3000
 
 # Start the Rails server
-# CMD ["./entrypoint.sh"]
 CMD ["rails", "server", "-b", "0.0.0.0"]
