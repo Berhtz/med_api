@@ -19,23 +19,23 @@ It will create a patient with ID 1 and the name John Doe; other parameters will 
 Routes manual testing in order:  
 
 1. post '/consultation_requests' payload example:  
-{"consultation_request": {
-    "patient_id": 1,
-    "request_text": "example text"
-    }
-}
+{"consultation_request": {  
+    "patient_id": 1,  
+    "request_text": "example text"  
+    }  
+}  
 
-2. post '/consultation_requests/:request_id/recommendations' set the request_id to 1, payload example:
-{"recommendation": {
-    "recommendation_text": "example text"
-    }
-}
+2. post '/consultation_requests/:request_id/recommendations' set the request_id to 1, payload example:  
+{"recommendation": {  
+    "recommendation_text": "example text"  
+    }  
+}  
 
-3. get '/patients/:patient_id/recommendations', set the request_id to 1, no payload for this one
+3. get '/patients/:patient_id/recommendations', set the request_id to 1, no payload for this one  
 
-4. get '/make_api_request', this is route to get data from OpenFDA
+4. get '/make_api_request', this is route to get data from OpenFDA  
 
-Task:
+Task:  
 
 **Задача**: Разработать backend для сервиса «Онлайн рекомендации»
 
